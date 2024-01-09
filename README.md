@@ -33,37 +33,45 @@ First create the object:
 $email = new graph_sendMail();                  # Creates a new Email object
 ```
 
-    - Recipients:
-    You can either set a single recipient:
-    ```php
-    $recipients = "user1@example.com";              # Sets a single recipient
-    ```
+-- Recipients:
+You can either set a single recipient:
+```php
+$recipients = "user1@example.com";              # Sets a single recipient
+```
 
-    Or multiple recipients using an array:
-    $recipients = array(                            # Sets multiple recipients in an array
-        "user1@example.com",
-        "user2@example.com"
-    );
-
-
-    - Message Content
-    You can either use plaintext with these:
-    $email->bodytype = "text";                      # Sets body type to plain text
-    $email->body = $myContent;                      # Sets the body of the email, this can be a string or a variable containing a string.
+Or multiple recipients using an array:
+```php
+$recipients = array(                            # Sets multiple recipients in an array
+    "user1@example.com",
+    "user2@example.com"
+);
+```
 
 
-    Or with HTML:
-    $email->bodytype = "html";                      # Sets body type to HTML                      
-    $email->body = $htmlContent;                    # Sets the body of the email, this can be a string of HTML of a variable containing HTML.
-    (HTML is automatically encoded for use in a JSON)
+- Message Content
+You can either use plaintext with these:
+```php
+$email->bodytype = "text";                      # Sets body type to plain text
+$email->body = $myContent;                      # Sets the body of the email, this can be a string or a variable containing a string.
+```
 
-    To be helpful, the variable to turn a HTML file to HTML variable is below:
-    $htmlContent = file_get_contents("test.html");
+Or with HTML:
+```php
+$email->bodytype = "html";                      # Sets body type to HTML                      
+$email->body = $htmlContent;                    # Sets the body of the email, this can be a string of HTML of a variable containing HTML.
+```
+(HTML is automatically encoded for use in a JSON)
+
+To be helpful, the variable to turn a HTML file to HTML variable is below:
+```php
+$htmlContent = file_get_contents("test.html");
+```
 
 
-    - Properties:
-
-    $email->token = $token->fetch("token");         # Sets the token for authentication
-    $email->sender = "user@example.com";            # Sets the sender of the email
-    $email->subject = "My Test";                    # Sets the subject
-    $email->recipients = $recipients;               # Sets the recipients (see above), can be a string if just one user, or a variable containing a string or array.
+- Properties:
+```php
+$email->token = $token->fetch("token");         # Sets the token for authentication
+$email->sender = "user@example.com";            # Sets the sender of the email
+$email->subject = "My Test";                    # Sets the subject
+$email->recipients = $recipients;               # Sets the recipients (see above), can be a string if just one user, or a variable containing a string or array.
+```
