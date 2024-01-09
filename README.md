@@ -79,3 +79,12 @@ $email->sender = "user@example.com";            # Sets the sender of the email
 $email->subject = "My Test";                    # Sets the subject
 $email->recipients = $recipients;               # Sets the recipients (see above), can be a string if just one user, or a variable containing a string or array.
 ```
+
+
+- Final Step
+
+Once you've set all the variables, you can then send the email:
+```php
+echo $email->construct();                       # NOT REQUIRED - this will output the message in its final JSON format, ready to be POSTed
+$email->send();                                 # If you're confused about what this does, perhaps this isn't the repo for you.
+```
