@@ -27,6 +27,8 @@ $email->recipients = $recipients;
 echo $email->send();
 
 
+
+
 // Plaintext Example 
 
 $recipients1 = array(

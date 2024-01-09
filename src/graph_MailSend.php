@@ -30,7 +30,6 @@ class graph_sendMail
             array_push($recipientlist, $userarray);
         }
 
-
         # Construct Message Payload
         $msg = array(
             "message" => array(
@@ -45,38 +44,28 @@ class graph_sendMail
         );
 
         $msgjson = json_encode($msg);
-
         return $msgjson;
-
-
     }
 
     public function send() {
         $msgjson = $this->construct();
-
         $uri = "https://graph.microsoft.com/v1.0/users/".$this->sender."/sendMail";
-
         $headers = [
             'Authorization: Bearer '.$this->token,
             'Content-Type: application/json'
         ];
-
         $msgcurl = curl_init($uri);
         curl_setopt($msgcurl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($msgcurl, CURLOPT_POST, true);
         curl_setopt($msgcurl, CURLOPT_POSTFIELDS, $msgjson);
         curl_setopt($msgcurl, CURLOPT_HTTPHEADER, $headers);
-
         $response = curl_exec($msgcurl);
-
         if (curl_errno($msgcurl)) {
             return 'Error: '.curl_error($msgcurl);
         } else {
             return $response;
         }
         curl_close($tokencurl);
-
-        #return $msgjson;
     }
 }
 ?>
