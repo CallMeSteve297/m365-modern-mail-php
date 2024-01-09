@@ -10,27 +10,34 @@ You need to grant admin consent
 - Generating the Token
 You'll need to include the token.php file to use the class. See example below:
 
+```php
 $token = new graph_GetToken();                  # Creates a new Object
 $token->client_secret = 'secret_here';          # Generate a secret in Entra ID
 $token->client_id = 'clientid_here';            # Get Client ID from Entra ID
 $token->tenant_id = 'tenantid_here';            # Get Tenant ID from Entra ID
+```
 
 You can then get the token using one of the following:
+```php
 $token->fetch("token")      # Fetches just the token
 $token->fetch("array")      # Fetches all info as a PHP array
 $token->fetch("json")       # Fetches all info as a JSON object
-
+```
 
 
 - Sending an Email
 You can then send as many emails as required using the token.
 
 First create the object:
+```php
 $email = new graph_sendMail();                  # Creates a new Email object
+```
 
     - Recipients:
     You can either set a single recipient:
+    ```php
     $recipients = "user1@example.com";              # Sets a single recipient
+    ```
 
     Or multiple recipients using an array:
     $recipients = array(                            # Sets multiple recipients in an array
