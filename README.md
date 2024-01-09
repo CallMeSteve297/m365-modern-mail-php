@@ -26,6 +26,7 @@ $token->fetch("json")                           # Fetches all info as a JSON obj
 
 
 - Sending an Email
+
 You can then send as many emails as required using the token.
 
 First create the object:
@@ -34,6 +35,7 @@ $email = new graph_sendMail();                  # Creates a new Email object
 ```
 
 - Recipients
+
 You can either set a single recipient:
 ```php
 $recipients = "user1@example.com";              # Sets a single recipient
@@ -49,6 +51,7 @@ $recipients = array(                            # Sets multiple recipients in an
 
 
 - Message Content
+
 You can either use plaintext with these:
 ```php
 $email->bodytype = "text";                      # Sets body type to plain text
@@ -69,6 +72,7 @@ $htmlContent = file_get_contents("test.html");
 
 
 - Properties
+
 ```php
 $email->token = $token->fetch("token");         # Sets the token for authentication
 $email->sender = "user@example.com";            # Sets the sender of the email
