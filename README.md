@@ -17,7 +17,7 @@ $token->client_id = 'clientid_here';            # Get Client ID from Entra ID
 $token->tenant_id = 'tenantid_here';            # Get Tenant ID from Entra ID
 ```
 
-You can then get the token using one of the following:
+You can then get the token using *one* of the following:
 ```php
 $token->fetch("token")                          # Fetches just the token
 $token->fetch("array")                          # Fetches all info as a PHP array
