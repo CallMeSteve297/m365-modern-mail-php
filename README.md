@@ -60,7 +60,7 @@ Or with HTML
 $email->bodytype = "html";                      # Sets body type to HTML                      
 $email->body = $htmlContent;                    # Sets the body of the email, this can be a string of HTML of a variable containing HTML.
 ```
-(HTML is automatically encoded for use in a JSON)
+*HTML is automatically encoded for use in a JSON*
 
 To be helpful, the variable to turn a HTML file to HTML variable is below:
 ```php
