@@ -19,9 +19,9 @@ $token->tenant_id = 'tenantid_here';            # Get Tenant ID from Entra ID
 
 You can then get the token using one of the following:
 ```php
-$token->fetch("token")      # Fetches just the token
-$token->fetch("array")      # Fetches all info as a PHP array
-$token->fetch("json")       # Fetches all info as a JSON object
+$token->fetch("token")                          # Fetches just the token
+$token->fetch("array")                          # Fetches all info as a PHP array
+$token->fetch("json")                           # Fetches all info as a JSON object
 ```
 
 
