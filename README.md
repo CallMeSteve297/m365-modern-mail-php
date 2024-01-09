@@ -1,13 +1,10 @@
-# m365-modern-mail-php
- Simple scripts to send emails via modern auth on PHP
+# Sending Email via Modern Auth on PHP
 
-# Sending Email via Modern Auth
-
-- Prerequisites
+## Prerequisites
 You need to create an app registration with application permission of User.SendMail
 You need to grant admin consent
 
-- Generating the Token
+## Generating the Token
 You'll need to include the token.php file to use the class. See example below:
 
 ```php
@@ -25,7 +22,7 @@ $token->fetch("json")                           # Fetches all info as a JSON obj
 ```
 
 
-- Sending an Email
+## Sending an Email
 
 You can then send as many emails as required using the token.
 
@@ -34,7 +31,7 @@ First create the object:
 $email = new graph_sendMail();                  # Creates a new Email object
 ```
 
-- Recipients
+### Recipients
 
 You can either set a single recipient:
 ```php
@@ -50,7 +47,7 @@ $recipients = array(                            # Sets multiple recipients in an
 ```
 
 
-- Message Content
+### Message Content
 
 You can either use plaintext with these:
 ```php
@@ -71,7 +68,7 @@ $htmlContent = file_get_contents("test.html");
 ```
 
 
-- Properties
+### Properties
 
 ```php
 $email->token = $token->fetch("token");         # Sets the token for authentication
@@ -81,7 +78,7 @@ $email->recipients = $recipients;               # Sets the recipients (see above
 ```
 
 
-- Final Step
+### Final Step
 
 Once you've set all the variables, you can then send the email:
 ```php
