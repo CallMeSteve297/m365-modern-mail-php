@@ -69,7 +69,7 @@ $email->body = $htmlContent;                    # Sets the body of the email, th
 
 _HTML is automatically encoded for use in a JSON_
 
-To be helpful, the variable to turn a HTML file to HTML variable is below:
+To be helpful, the variable to turn a HTML file to a HTML variable is below:
 
 ```php
 $htmlContent = file_get_contents("test.html");
